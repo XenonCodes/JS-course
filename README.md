@@ -1,1 +1,3 @@
-# JS-course
+# JS-course  
+
+Автор кода: XenonCodes
