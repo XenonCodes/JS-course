@@ -24,7 +24,7 @@
         'use strict'
         let bEl = document.querySelectorAll('b');
         bEl.forEach(value => {
-            if (value.classList.contains('sign') == false) {
+            if (!value.classList.contains('sign')) {
                 value.classList.add('sign');
             }
         });
