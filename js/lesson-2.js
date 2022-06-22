@@ -138,10 +138,19 @@ mathOperation(2, 3, "+");
 // То есть ваша задача выводить слово «рубль» в правильном падеже, в зависимости от введенного числа.
 let userMoney = prompt("Сколько вы хотите положить на счёт в банке?");
 let numberLength = userMoney.length
-if (userMoney < 11) {
+if (beforeLastDigit(userMoney) == 1) {
+    alert(`Ваша сумма в ${userMoney} рублей успешно зачислена.`);
+} else if (userMoney <= 0) {
+    alert("Это шутка?!?!");
+} else {
     switch (userMoney.charAt(numberLength - 1)) {
         case "0":
-            alert("Это шутка?!?!");
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+            alert(`Ваша сумма в ${userMoney} рублей успешно зачислена.`);
             break;
         case "1":
             alert(`Ваша сумма в ${userMoney} рубль успешно зачислена.`);
@@ -152,54 +161,14 @@ if (userMoney < 11) {
             alert(`Ваша сумма в ${userMoney} рубля успешно зачислена.`);
             break;
         default:
-            alert(`Ваша сумма в ${userMoney} рублей успешно зачислена.`);
+            alert("Это шутка?!?!");
     }
-} else if (userMoney > 10) {
-    let newString = userMoney.charAt(numberLength - 2) + userMoney.charAt(numberLength - 1);
-    switch (newString) {
-        case "21":
-        case "31":
-        case "41":
-        case "51":
-        case "61":
-        case "71":
-        case "81":
-        case "91":
-        case "01":
-            alert(`Ваша сумма в ${userMoney} рубль успешно зачислена.`);
-            break;
-        case "22":
-        case "23":
-        case "24":
-        case "32":
-        case "33":
-        case "34":
-        case "42":
-        case "43":
-        case "44":
-        case "52":
-        case "53":
-        case "54":
-        case "62":
-        case "63":
-        case "64":
-        case "72":
-        case "73":
-        case "74":
-        case "82":
-        case "83":
-        case "84":
-        case "92":
-        case "93":
-        case "94":
-        case "02":
-        case "03":
-        case "04":
-            alert(`Ваша сумма в ${userMoney} рубля успешно зачислена.`);
-            break;
-        default:
-            alert(`Ваша сумма в ${userMoney} рублей успешно зачислена.`);
+}
+
+function beforeLastDigit(num) {
+    if (num.charAt(num.length - 2) == 1) {
+        return 1;
+    } else {
+        return null
     }
-} else {
-    alert("Введите число!");
 }

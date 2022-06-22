@@ -24,9 +24,9 @@ hundreds: 0, //это сотни
 - Вам также может пригодится делить число на 100 и на 10. */
 function check() {
     let range = [0, 999];
-    let userNumber = prompt(`Введите целое число в диапазоне от ${range[0]} до ${range[1]}`);
+    let userNumber = +prompt(`Введите целое число в диапазоне от ${range[0]} до ${range[1]}`);
     let result = {};
-    if (userNumber === null || userNumber === "" || +userNumber < range[0] && +userNumber > range[1] || Number.isInteger(+userNumber) === false) {
+    if (userNumber < range[0] && userNumber > range[1] || !Number.isInteger(userNumber)) {
         alert(`Вы ввели не целое число в диапазона от ${range[0]} до ${range[1]}!`);
         console.log(result);
     } else {
