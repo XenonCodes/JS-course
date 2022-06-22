@@ -126,7 +126,7 @@ console.log(products);
 // или увеличивать счетчик например на 1, допустимы любые выражения, например вызовы функций.
 for (let i = 0; i < 10; test(i++)) {
 
-};
+}
 
 function test(arg1) {
     return console.log(arg1);
