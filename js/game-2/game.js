@@ -27,7 +27,6 @@ let game = {
      * @returns 
      */
     start() {
-        debugger;
         this.run();
         let restart = prompt(`Ваш счёт составил ${score}\n
         Хотите сыграть ещё раз?`);

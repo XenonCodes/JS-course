@@ -27,7 +27,7 @@ class Questions {
         if (this.result.toLocaleLowerCase() == this.rightAnswer) {
             alert(`Вы угадали! Ваш счёт ${score += 100}`)
         } else {
-            alert(`Вы не угадали! Ваш счёт ${reducingScore(score)}`)
+            alert(`Вы не угадали! Ваш счёт ${score = reducingScore(score)}`)
         }
     }
 }
